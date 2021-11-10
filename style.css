@@ -5,12 +5,12 @@ body {
 
 .title {
     width: 500px;
-    margin: 5% auto 40px;
-    font-family: cursive;
-    font-size: 40pt;
+    margin: 5% auto 50px;
+    font-family: "Great Vibes", Charm, cursive;
+    font-size: 35pt;
     text-align: center;
     color: goldenrod;
-    text-shadow: grey 1px 1px, rgba(0,0,0,0.6) 1px 1px 5px;
+    /* text-shadow: grey 1px 1px, rgba(0,0,0,0.6) 1px 1px 5px; */
 }
 
 .question {
