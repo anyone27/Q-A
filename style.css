@@ -40,11 +40,33 @@ h2 {
     font-size: 10pt;
 }
 
-.fa-plus-square {
+.plus {
     float: right;
     font-size: 24pt;
     color: goldenrod;
     cursor: pointer;
+}
+
+.plus:hover {
+    animation-name: in;
+    animation-duration: 1s;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+}
+
+.plus {
+    animation-name: out;
+    animation-duration: 1s;
+}
+
+@keyframes in {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(90deg);}
+}
+
+@keyframes out {
+    from {transform: rotate(90deg);}
+    to {transform: rotate(0deg);}
 }
 
 .divider {
@@ -53,6 +75,6 @@ h2 {
     width: 90%;
 }
 
-.show-answer {
+.show-answer .answer {
     display: block;
 }

@@ -1,27 +1,33 @@
-const plus1 = document.getElementById("plus1");
-const plus2 = document.getElementById("plus2");
-const plus3 = document.getElementById("plus3");
+// Traversing the DOM
 
-const answer1 = document.getElementById("a1");
-const answer2 = document.getElementById("a2");
-const answer3 = document.getElementById("a3");
+// const btns = document.querySelectorAll(".button");
 
-const allAnswers = document.querySelectorAll(".answers");
+// btns.forEach(function (btn) {
+//     btn.addEventListener("click", function (e) {
+//         btn.classList.toggle("fa-plus-square");
+//         btn.classList.toggle("fa-minus-square");
+//         const question = e.currentTarget.parentElement.parentElement.parentElement;
+//         question.classList.toggle("show-answer")
+//     })
+    
+// })
 
-plus1.addEventListener("click", function() {
-    answer1.classList.toggle("show-answer");
-    answer2.classList.remove("show-answer");
-    answer3.classList.remove("show-answer");
-})
+// Using Selectors inside the element
 
-plus2.addEventListener("click", function() {
-    answer1.classList.remove("show-answer");
-    answer2.classList.toggle("show-answer");
-    answer3.classList.remove("show-answer");
-})
+const questions = document.querySelectorAll(".question");
 
-plus3.addEventListener("click", function() {
-    answer1.classList.remove("show-answer");
-    answer2.classList.remove("show-answer");
-    answer3.classList.toggle("show-answer");
+questions.forEach(function(question) {
+    const btn = question.querySelector(".button");
+    btn.addEventListener("click", function() {
+        questions.forEach(function(item) {
+            if(item !== question) {
+                item.classList.remove("show-answer");
+                item.querySelector(".button").classList.remove("fa-minus-square");
+                item.querySelector(".button").classList.add("fa-plus-square");
+            }
+        })
+        btn.classList.toggle("fa-plus-square");
+        btn.classList.toggle("fa-minus-square");
+        question.classList.toggle("show-answer");
+    });
 })
